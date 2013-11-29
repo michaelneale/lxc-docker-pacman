@@ -22,7 +22,7 @@ source=(
     'docker.bash'
     'docker.zsh'
     'docker.install'
-#    'docker.sysctl'
+#    'docker.sysctl'  
 )
 conflicts=('lxc-docker-git' 'lxc-docker-nightly')
 replaces=('dotcloud-docker')
