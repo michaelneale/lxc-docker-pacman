@@ -14,7 +14,7 @@ pkgdesc="Docker - the Linux container runtime"
 arch=('x86_64')
 url="https://github.com/dotcloud/docker"
 license=('Apache License 2.0')
-depends=('bridge-utils' 'iproute2' 'device-mapper' 'lxc')
+depends=('lxc')
 provides=('lxc-docker')
 source=(
     "https://get.docker.io/builds/Linux/x86_64/docker-${pkgver}" 
