@@ -1,12 +1,15 @@
 post_install() {
 	grep -q '^docker:' /etc/group || groupadd --system docker
 	systemctl daemon-reload
-	sudo systemctl enable docker	
+	systemctl start docker
+	systemctl enable docker	
+	
 	sed -i 's/net.ipv4.ip_forward = 0/net.ipv4.ip_forward = 1/' /etc/sysctl.conf
 	sysctl net.ipv4.ip_forward=1
 
-	echo "You will want to run docker pull ubuntu now (and centos)"
-
+	echo "seeding docker repo..."
+	docker pull ubuntu
+	docker pull centos
 }
 
 pre_upgrade() {
