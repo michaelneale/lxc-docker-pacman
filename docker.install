@@ -7,9 +7,7 @@ post_install() {
 	sed -i 's/net.ipv4.ip_forward = 0/net.ipv4.ip_forward = 1/' /etc/sysctl.conf
 	sysctl net.ipv4.ip_forward=1
 
-	echo "seeding docker repo..."
-	docker pull ubuntu
-	docker pull centos
+	echo "You may want to pull seed repos like ubuntu and centos"
 }
 
 pre_upgrade() {
